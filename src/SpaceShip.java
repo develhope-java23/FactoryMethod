@@ -1,4 +1,4 @@
-public class SpaceShip implements Vehicle{
+public class SpaceShip implements Vehicle {
 
     private String name;
 
@@ -20,7 +20,7 @@ public class SpaceShip implements Vehicle{
 
     @Override
     public void accelerate() {
-      speed = speed + engine.getAcceleration() * engine.getAcceleration();
+        speed = speed + engine.getAcceleration() * engine.getAcceleration();
         if (speed > engine.getMaxSpeed()) {
             speed = engine.getMaxSpeed();
         }

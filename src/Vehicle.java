@@ -1,5 +1,6 @@
 public interface Vehicle {
 
-   void accelerate();
-   void decelerate();
+    void accelerate();
+
+    void decelerate();
 }
