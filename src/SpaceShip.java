@@ -1,21 +1,26 @@
-public class Car implements Vehicle {
+public class SpaceShip implements Vehicle{
+
     private String name;
+
     private String color;
+
     private double speed;
-    private Engine engine;
+
     private Brake brake;
 
-    public Car(String name, String color, Engine engine, Brake brake) {
+    private Engine engine;
+
+    public SpaceShip(String name, String color, Engine engine, Brake brake) {
         this.name = name;
-        this.color = color;
         this.speed = 0;
-        this.engine = engine;
+        this.color = color;
         this.brake = brake;
+        this.engine = engine;
     }
 
     @Override
     public void accelerate() {
-        speed = speed + engine.getAcceleration();
+      speed = speed + engine.getAcceleration() * engine.getAcceleration();
         if (speed > engine.getMaxSpeed()) {
             speed = engine.getMaxSpeed();
         }
@@ -26,9 +31,7 @@ public class Car implements Vehicle {
         if (brake.getIntegrity() < 0) {
             throw new BrokenBrakeException();
         }
-        speed = speed - brake.getStrength();
-        brake.updateIntegrity();
-
+        speed = speed - Math.sqrt(brake.getStrength());
         if (speed < 0.0) {
             speed = 0;
         }
@@ -36,12 +39,12 @@ public class Car implements Vehicle {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "SpaceShip{" +
                 "name='" + name + '\'' +
                 ", color='" + color + '\'' +
                 ", speed=" + speed +
-                ", engine=" + engine +
                 ", brake=" + brake +
+                ", engine=" + engine +
                 '}';
     }
 }
