@@ -21,8 +21,8 @@ public class Brake {
         return strength;
     }
 
-    public void updateIntegrity(){
-        integrity = integrity - (1-durability);
+    public void updateIntegrity() {
+        integrity = integrity - (1 - durability);
     }
 
     @Override
