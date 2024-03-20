@@ -6,6 +6,13 @@ public class Main {
 
         System.out.println(fer1);
         System.out.println(fer2);
+        Car daily1 = new CarBuilder()
+                .name("Daily")
+                .color("white")
+                .engine(new Engine(2,100))
+                .brake(new Brake(10,3))
+                .build();
+        System.out.println(daily1);
     }
 
     public static Vehicle buildFerrari(String color, boolean shouldFly) {
